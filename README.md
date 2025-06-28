@@ -145,3 +145,36 @@ sequenceDiagram
         note left of Client: Client prints "message received"
     end
 ```
+
+###  Run the programs:
+
+**You will need two separate terminal windows.**
+
+#### In Terminal 1: Run the Server
+
+```bash
+# For the mandatory version
+./server
+
+# For the bonus version
+./server_bonus
+# It will print its PID, for example:
+# server PID: 12345
+```
+
+#### In Terminal 2: Run the Client
+
+```bash
+# For the mandatory version
+./client 12345 "Hello from the other side!"
+
+# For the bonus version
+./client_bonus 54321 "This message has Unicode! 🚀 and an acknowledgement."
+```
+
+**The server in Terminal 1 will display the message character by character.**
+
+## 👨‍💻 Author
+
+- 42 Intra: [eel-garo](https://profile.intra.42.fr/users/eel-garo)
+- GitHub: [MEHDIJAD](https://github.com/MAHDIJAD)
