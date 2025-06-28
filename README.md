@@ -3,6 +3,7 @@
 ### A client-server program that sends messages one bit at a time, using only UNIX signals.
 
 ![42 School Badge](https://img.shields.io/badge/42-School-blue)
+![Communication](https://img.shields.io/badge/Communication-Stable-success)
 ![Score](https://img.shields.io/badge/Score-125%2F100-brightgreen)
 
 > *"This project is a fascinating exercise in Inter-Process Communication (IPC), demonstrating how to encode, transmit, and decode data using the most basic form of communication available in UNIX: signals."*
