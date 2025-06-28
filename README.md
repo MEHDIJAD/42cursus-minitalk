@@ -33,10 +33,10 @@ cd 42cursus-minitalk
 #### 3. Compile the library:
 
 ```bash
-# To compile the mandatory part (threads/mutexes)
+# To compile the mandatory part
 make
 
-# To compile the bonus part (processes/semaphores)
+# To compile the bonus part
 make bonus
 ```
 
