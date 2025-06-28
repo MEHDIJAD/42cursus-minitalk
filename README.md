@@ -15,6 +15,59 @@
 
 This project forces a deep understanding of signal handling, bit manipulation, and process management.
 
+## 🚀 Getting Started
+
+#### 1. Clone the repository:
+
+```bash
+git clone https://github.com/MEHDIJAD/42cursus-minitalk.git
+```
+
+#### 2. Navigate to the project directory:
+
+```bash
+cd 42cursus-minitalk
+```
+
+#### 3. Compile the library:
+
+```bash
+# To compile the mandatory part (threads/mutexes)
+make
+
+# To compile the bonus part (processes/semaphores)
+make bonus
+```
+
+## 🪾 Project Structure
+```bash
+.
+├── Makefile
+├── README.md
+├── bonus
+│   ├── client_bonus.c
+│   ├── ft_atoi_bonus.c
+│   ├── ft_get_utf8_byte_count_bonus.c
+│   ├── ft_handler_bonus.c
+│   ├── minitalk_bonus.h
+│   └── server_bonus.c
+├── ft_printf
+│   ├── Makefile
+│   ├── ft_print_format.c
+│   ├── ft_printchar.c
+│   ├── ft_printdigit.c
+│   ├── ft_printf.c
+│   ├── ft_printf.h
+│   └── ft_printstr.c
+└── mand
+    ├── client.c
+    ├── ft_atoi.c
+    ├── minitalk.h
+    └── server.c
+
+4 directories, 19 files
+```
+
 ---
 
 ## 🧠 Core Concepts Explored
@@ -22,8 +75,8 @@ This project forces a deep understanding of signal handling, bit manipulation, a
 | Concept | How It's Used in This Project |
 | :--- | :--- |
 | **UNIX Signals** | The entire communication protocol is built on `SIGUSR1` and `SIGUSR2`. These signals are used to represent the binary bits `0` and `1`. |
-| **Signal Handling (`sigaction`)** | The server uses `sigaction` to set up a robust signal handler. `SA_SIGINFO` is used to get extra information, like the client's Process ID (PID), which is crucial for the bonus part. |
-| **Bit Manipulation** | The client deconstructs each character into its 8 constituent bits. The server reconstructs these bits back into a character using `static` variables to maintain state between signal arrivals. |
+| **Signal Handling (`sigaction`)** | The server uses `sigaction` to set up a robust signal handler. `SA_SIGINFO` is used to get extra information, like the client's Process ID (PID), **which is crucial for the bonus part.** |
+| **Bit Manipulation** | The client **deconstructs** each character into its 8 constituent bits. The server **reconstructs** these bits back into a character using `static` variables to maintain state between signal arrivals. |
 | **Client-Server IPC** | This project is a foundational example of Inter-Process Communication. It establishes a one-way (mandatory) or two-way (bonus) communication channel between two independent processes. |
 | **Process ID (PID)** | The client needs the server's PID to know where to send the signals. The server uses the client's PID to handle multiple clients and send acknowledgements in the bonus. |
 
@@ -91,3 +144,4 @@ sequenceDiagram
         Server->>Client: kill(client_pid, SIGUSR1)
         note left of Client: Client prints "message received"
     end
+```
